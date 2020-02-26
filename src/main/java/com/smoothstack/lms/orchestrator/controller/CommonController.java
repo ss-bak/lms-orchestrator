@@ -30,7 +30,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://administrator-service%s", request.getRequestURI()),
 					HttpMethod.GET, new HttpEntity<Object>(headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -41,7 +41,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://administrator-service%s", request.getRequestURI()),
 					HttpMethod.POST, new HttpEntity<Object>(object, headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -52,7 +52,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://administrator-service%s", request.getRequestURI()),
 					HttpMethod.PUT, new HttpEntity<Object>(object, headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -63,7 +63,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://administrator-service%s", request.getRequestURI()),
 					HttpMethod.DELETE, new HttpEntity<Object>(headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -74,7 +74,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://librarian-service%s", request.getRequestURI()),
 					HttpMethod.GET, new HttpEntity<Object>(headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -85,7 +85,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://librarian-service%s", request.getRequestURI()),
 					HttpMethod.POST, new HttpEntity<Object>(object, headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -96,7 +96,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://librarian-service%s", request.getRequestURI()),
 					HttpMethod.PUT, new HttpEntity<Object>(object, headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -107,7 +107,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://librarian-service%s", request.getRequestURI()),
 					HttpMethod.DELETE, new HttpEntity<Object>(headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -118,7 +118,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://borrower-service%s", request.getRequestURI()),
 					HttpMethod.GET, new HttpEntity<Object>(headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -129,7 +129,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://borrower-service%s", request.getRequestURI()),
 					HttpMethod.POST, new HttpEntity<Object>(object, headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -140,7 +140,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://borrower-service%s", request.getRequestURI()),
 					HttpMethod.PUT, new HttpEntity<Object>(object, headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
@@ -151,7 +151,7 @@ public class CommonController {
 			return restTemplate.exchange(String.format("http://borrower-service%s", request.getRequestURI()),
 					HttpMethod.DELETE, new HttpEntity<Object>(headers), Object.class);
 		} catch (HttpClientErrorException e) {
-			return ResponseEntity.status(e.getStatusCode()).body(e.getMessage());
+			return ResponseEntity.status(e.getStatusCode()).build();
 		}
 	}
 
