@@ -23,6 +23,17 @@ public class CommonController {
 	@Autowired
 	private RestTemplate restTemplate;
 
+	@PostMapping("/auth/**")
+	public ResponseEntity<Object> handleAuthPostRequest(HttpServletRequest request, @RequestBody Object object,
+			@RequestHeader MultiValueMap<String, String> headers) {
+		try {
+			return restTemplate.exchange(String.format("http://auth%s", request.getRequestURI()), HttpMethod.POST,
+					new HttpEntity<Object>(object, headers), Object.class);
+		} catch (HttpClientErrorException e) {
+			return ResponseEntity.status(e.getStatusCode()).build();
+		}
+	}
+
 	@GetMapping("/administrator/**")
 	public ResponseEntity<Object> handleAdministratorGetRequest(HttpServletRequest request,
 			@RequestHeader MultiValueMap<String, String> headers) {
