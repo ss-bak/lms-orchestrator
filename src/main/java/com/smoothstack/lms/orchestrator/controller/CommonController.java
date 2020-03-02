@@ -34,6 +34,17 @@ public class CommonController {
 		}
 	}
 
+	@DeleteMapping("/auth/**")
+	public ResponseEntity<Object> handleAuthDeleteRequest(HttpServletRequest request,
+			@RequestHeader MultiValueMap<String, String> headers) {
+		try {
+			return restTemplate.exchange(String.format("http://identityprovider%s", request.getRequestURI()),
+					HttpMethod.DELETE, new HttpEntity<Object>(headers), Object.class);
+		} catch (HttpClientErrorException e) {
+			return ResponseEntity.status(e.getStatusCode()).build();
+		}
+	}
+	
 	@PostMapping("/auth/**")
 	public ResponseEntity<Object> handleAuthPostRequest(HttpServletRequest request, @RequestBody Object object,
 			@RequestHeader MultiValueMap<String, String> headers) {
